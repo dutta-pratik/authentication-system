@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="/css/form.css">
+    <title>LogIn</title>
+</head>
+<body>
+    <div class="main-box">
+        <div class="heading">
+            <h3><strong>LogIn Form</strong></h3>  
+        </div>
+
+        <form action="/signin" method="POST">
+
+            <div class="email">
+                <label for="email"> <strong>Email</strong> </label> <br>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                
+            </div>
+
+            <div class="password">
+                <label for="password"> <strong>Password</strong> </label> <br>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" name="submit" id="submit" value="Submit">
+            </div>
+            
+        </form>
+        <a href="/forgot" id="forgot">Forgot Password</a>
+    </div>
+
+    <script>
+        <% if (flash.success && flash.success.length > 0) {%>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.success %>",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1500
+                
+            }).show();    
+        <%} %>
+
+        <% if (flash.error && flash.error.length > 0) {%>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.error %>",
+                type: 'error',
+                layout: 'topRight',
+                timeout: 1500
+                
+            }).show();    
+        <%} %>
+    </script>
+
+</body>
+</html>

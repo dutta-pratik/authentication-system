@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="main-box">
+        <div class="heading">
+            <h3><strong>Registration Form</strong></h3>  
+        </div>
+
+        <form action="/forgot/check/<%= id %>" method="POST">
+            <p style="margin-left: 40px; margin-top: 10px; font-weight: 400;">Plese enter your new password</p>
+            <div class="password">
+                <label for="password"> <strong>Password</strong> </label> <br>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                
+            </div>
+            <div class="confpassword">
+                <label for="confpassword"> <strong>Confirm Password</strong> </label> <br>
+                <input type="password" name="confpassword" id="confpassword" placeholder="Confirm Password" required>
+                
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" name="submit" id="submit" value="Submit">
+            </div>
+            
+
+        </form>
+
+    </div>
+</body>
+</html>
